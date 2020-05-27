@@ -1,2 +1,14 @@
-require "bundler/gem_tasks"
-task :default => :spec
+desc "Start the app"
+task :start do
+    Dir.chdir("./bin") {ruby "fizzbuzzStart.rb"}
+end
+
+desc "get the environemt loaded"
+task :environment do
+    require_relative './cfg/environment'
+end
+
+"Start a console"
+task :console => :environment do
+    Pry.start
+end

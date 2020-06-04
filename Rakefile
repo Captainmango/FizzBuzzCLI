@@ -8,7 +8,7 @@ task :environment do
     require_relative './cfg/environment'
 end
 
-"Start a console"
+desc "Start a console"
 task :console => :environment do
     Pry.start
 end

@@ -1,6 +1,7 @@
-require'pry'
+require 'pry'
 
-class FizzBuzz 
+
+module FizzBuzz 
     def rand_list_of_nums
         random_num = rand(20..50)
         return [*1..random_num]
@@ -26,6 +27,3 @@ class FizzBuzz
     end
 
 end
-
-fizzbuzz = FizzBuzz.new
-fizzbuzz.make_fizzbuzz

@@ -1,11 +1,12 @@
 require 'spec_helper'
-require_relative '../../lib/fizzbuzz/fizzbuzz'
+require_relative '../../../lib/fizzbuzz/fizzbuzz.rb'
+require_relative '../../../lib/fizzbuzz/fizzbuzz.rb'
 
 describe FizzBuzz do
-    let(:fizzbuzz) {FizzBuzz.new}
-        let(:new_array) {fizzbuzz.make_fizzbuzz}
+    let(:fizzbuzz_cli) {FizzBuzzCLI.new}
+        let(:new_array) {fizzbuzz_cli.make_fizzbuzz}
             it "generates a list of numbers" do
-                fizzbuzz.rand_list_of_nums
+                fizzbuzz_cli.rand_list_of_nums
             end
 
             it "contains fizz elements" do

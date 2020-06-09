@@ -1,6 +1,7 @@
 require 'pry'
 
 class FizzBuzzCLI
+    attr_accessor :input
     include FizzBuzz
 
     def initialize
@@ -15,8 +16,12 @@ class FizzBuzzCLI
 
     def get_input
         puts "enter a command or type help"
-        @input = gets.chomp.downcase
+        store_input
         menu
+    end
+
+    def store_input(input = gets.chomp.downcase)
+        @input = input
     end
 
     def menu
@@ -28,13 +33,16 @@ class FizzBuzzCLI
         when "calculator"
             puts "starting up the calculator"
             sleep(2)
+        else
+            puts "not a valid option"
+            get_input
         end
         go_again
     end
 
     def go_again
         puts "Do you want to do something else? (Y/N)"
-        @input = gets.chomp.downcase
+        store_input
         case @input
         when "y"
             get_input
